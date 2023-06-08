@@ -59,11 +59,11 @@ body {
 }
 
 .resultado > h1 {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .resultado2 > p {
-    font-size: 18px;
+    font-size: 10px;
     margin-bottom: -4px;
 }
 
@@ -103,7 +103,7 @@ body {
     background-size: 70px 60px;
     background-position: center;
 }
-
+/*
 #somar{
     background-image: url('../icons/mais.png');
     background-repeat: no-repeat;
@@ -131,3 +131,5 @@ body {
     background-size: 30px 30px;
     background-position: center;
 }
+*/
+
