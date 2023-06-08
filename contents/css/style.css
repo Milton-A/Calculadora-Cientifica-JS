@@ -1,0 +1,133 @@
+body {
+    background-color: rgb(230, 230, 230);
+}
+
+
+.container-fluid {
+    margin-top: 5px;
+}
+
+.col {
+    text-align: center;
+    font-size: 15px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    padding: 15px;
+    background-color: rgb(240,240,240);
+    cursor: default;
+    weight: 10px;
+}
+
+.col:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+.col:active {
+    background-color: rgb(192, 192, 192);
+}
+
+
+.funct-1, .funct-2 {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.funct-1:hover, .funct-2:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+.funct-1:active, .funct-2:active {
+    background-color: rgb(192, 192, 192);
+}
+
+.numeros {
+    background-color: white;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.resultado, .resultado2 {
+    text-align: right;
+}
+
+.resultado > h1 {
+    font-size: 50px;
+}
+
+.resultado2 > p {
+    font-size: 18px;
+    margin-bottom: -4px;
+}
+
+.cabecalio > div > h3 {
+    font-weight: 400;
+    font-size: 25px;
+    margin: 5px;
+}
+
+.cabecalio > div > h4 {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 5px;
+}
+
+#backspace {
+    background-image: url('../icons/backspace1.png');
+    background-repeat: no-repeat;
+    background-size: 80px 70px;
+    background-position: center;
+}
+  
+
+
+#div-historico, #div-memoria {
+    text-align: right;
+}
+
+#his {
+    border-bottom: 3px solid red;
+    text-align: center;
+}
+
+#igual {
+    background-image: url('../icons/igual.png');
+    background-repeat: no-repeat;
+    background-size: 70px 60px;
+    background-position: center;
+}
+
+#somar{
+    background-image: url('../icons/mais.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
+
+#subtrair{
+    background-image: url('../icons/menos.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
+
+#multiplicar{
+    background-image: url('../icons/multiplicar.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
+
+#dividido{
+    background-image: url('../icons/dividir.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}
