@@ -12,19 +12,15 @@ function calcular(){
     ecra.innerHTML = ecra.innerHTML.replace('x', '*');
     ecra.innerHTML = ecra.innerHTML.replace('mod', '%');
     ecra.innerHTML = ecra.innerHTML.replace('^', '**');
+    var ter = ecra.innerHTML;
     ecra.innerHTML = eval(ecra.innerHTML);
     atualiza();
-    historico.push(conta);
+
+    historico.push(ecra.innerHTML);
 
     $('#valor2').html("");
     vaiMudar = true;
-    if (fe) {
-        $('#valor').html(resultado.toExponential().toString().replace('.', ','));
-    }
-    else {
-        $('#valor').html(resultado.toString().replace('.', ','));
-    }
-    historico.push("<h5>" + resultado + "</h5>");
+    historico.push("<h5>" +ter +"="+ ecra.innerHTML + "</h5>");
     localStorage.setItem("historico", historico);
     var historicoLocal = localStorage.getItem("historico");
     while (historicoLocal.includes(','))
@@ -55,7 +51,31 @@ function atualiza() {
     });
 };
 
+$(document).on('click', '#exportar', function() {
+    var resultado = $('#div-historico').text(); // Obtenha o resultado atual
+  
+    // Copie o resultado para a área de transferência
+    navigator.clipboard.writeText(resultado)
+      .then(function() {
+        alert('Resultado copiado para a área de transferência!');
+      })
+      .catch(function(error) {
+        console.error('Erro ao copiar o resultado:', error);
+      });
+  
+    // Crie um link de download para o resultado
+    var downloadLink = document.createElement('a');
+    downloadLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(resultado);
+    downloadLink.download = 'resultado.txt';
+    downloadLink.style.display = 'none';
+  
+    // Adicione o link ao corpo da página e clique nele para iniciar o download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  });
 
+  
 $(document).on('click', '#c', function () {
     atualiza();
     $('#valor').html('0');
