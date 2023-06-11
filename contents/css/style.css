@@ -1,21 +1,16 @@
 body {
     background-color: rgb(230, 230, 230);
 }
-
-
 .container-fluid {
     margin-top: 5px;
 }
 
 .col {
     text-align: center;
-    font-size: 15px;
-    margin-left: 3px;
-    margin-bottom: 3px;
-    padding: 15px;
+    font-size: 10px;
+    padding: 10px;
     background-color: rgb(240,240,240);
     cursor: default;
-    weight: 10px;
 }
 
 .col:hover {
@@ -29,9 +24,9 @@ body {
 
 .funct-1, .funct-2 {
     text-align: center;
-    font-size: 13px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 3px;
     margin-bottom: 3px;
     font-weight: 500;
@@ -49,9 +44,9 @@ body {
 .numeros {
     background-color: white;
     font-weight: 500;
-    font-size: 16px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .resultado, .resultado2 {
@@ -79,14 +74,44 @@ body {
     margin: 5px;
 }
 
+#side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+#side-menu.show {
+  display: block;
+}
+
+#side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#side-menu ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#side-menu ul li:hover {
+  background-color: #ccc;
+}
+
 #backspace {
     background-image: url('../icons/backspace1.png');
     background-repeat: no-repeat;
     background-size: 80px 70px;
     background-position: center;
-}
-  
-
+} 
 
 #div-historico, #div-memoria {
     text-align: right;

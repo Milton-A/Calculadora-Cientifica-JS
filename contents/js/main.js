@@ -1,3 +1,38 @@
+let ecra = document.getElementById('valor');
+let ecra2 = document.getElementById('valor2');
+
+function pegar(valor){
+    ecra2.innerHTML= ecra.innerHTML === '0' ?valor:ecra.innerHTML + valor;
+    ecra.innerHTML= ecra.innerHTML === '0' ?valor:ecra.innerHTML + valor;
+    
+}
+
+function calcular(){
+    ecra.innerHTML = ecra.innerHTML.replace(',', '.');
+    ecra.innerHTML = ecra.innerHTML.replace('x', '*');
+    ecra.innerHTML = ecra.innerHTML.replace('mod', '%');
+    ecra.innerHTML = ecra.innerHTML.replace('^', '**');
+    ecra.innerHTML = eval(ecra.innerHTML);
+    atualiza();
+    historico.push(conta);
+
+    $('#valor2').html("");
+    vaiMudar = true;
+    if (fe) {
+        $('#valor').html(resultado.toExponential().toString().replace('.', ','));
+    }
+    else {
+        $('#valor').html(resultado.toString().replace('.', ','));
+    }
+    historico.push("<h5>" + resultado + "</h5>");
+    localStorage.setItem("historico", historico);
+    var historicoLocal = localStorage.getItem("historico");
+    while (historicoLocal.includes(','))
+        historicoLocal = historicoLocal.replace(',', '<br>');
+    $('#div-historico').html(historicoLocal);
+}
+
+
 var vaiMudar = false, cont, valor, historico = Array(), memoria = Array(), fe = false, hyp = false; deg = "deg";
 
 function atualiza() {
@@ -20,45 +55,6 @@ function atualiza() {
     });
 };
 
-$(document).on('click', '.numeros', function () {
-    atualiza();
-    if (valor.length < 15)
-        $('#valor').html(valor == "0" || vaiMudar ? $(this).text().trim() : (valor + $(this).text().trim()).replace('.', ','));
-    vaiMudar = false;
-});
-
-$(document).on('click', '.opp', function () {
-    atualiza();
-    var valor2 = $('#valor2').text();
-    var valor = $('#valor').text();
-
-    if (valor2 === '') {
-        $('#valor2').html("(");
-    } else {
-        $('#valor2').html($('#valor2').text() + $('#valor').text() + " " + $(this).text() + " ");
-    }
-    $('#valor').html(valor = 0);
-    vaiMudar = true;
-});
-/*
-$(document).on('click', '#multiplicar', function() {
-    atualiza();
-    $('#valor2').html($('#valor2').text()+$('#valor').text()+"x");
-    vaiMudar = true;
-});
-
-$(document).on('click', '#subtrair', function() {
-    atualiza();
-    $('#valor2').html($('#valor2').text()+$('#valor').text()+"-");
-    vaiMudar = true;
-});
-
-$(document).on('click', '#somar', function() {
-    atualiza();
-    $('#valor2').html($('#valor2').text()+$('#valor').text()+"+");
-    vaiMudar = true;
-});
-*/
 
 $(document).on('click', '#c', function () {
     atualiza();
@@ -359,57 +355,6 @@ $(document).on('click', '#mMenos', function () {
 
 $(document).ready(function () {
     $('#historico').click();
-});
-
-$(document).on('click', '#igual', function () {
-    atualiza();
-    valor2 = $('#valor2').text();
-    valor2 = valor2.replace('×', '*');
-    valor2 = valor2.replace('/', '/');
-    conta = "";
-    if (valor2.substring(valor2.length - 2, valor2.length - 1) == ")")
-        conta = valor2;
-    else
-        conta = valor2 + $('#valor').text();
-    resultado = 0;
-    conta = conta.replace(',', '.');
-    historico.push(conta);
-    if (conta.includes('^')) {
-        conta = conta.split('^');
-        aux = 0;
-        for (i = 0; i < conta.length; i++) {
-            if (i == 0)
-                resultado = eval(conta[0]);
-            else
-                resultado = Math.pow(resultado, eval(conta[i]));
-        }
-    }
-    else if (conta.includes('Mod')) {
-        conta = conta.split('Mod');
-        aux = 0;
-        for (i = 0; i < conta.length; i++) {
-            if (i == 0)
-                resultado = eval(conta[0]);
-            else
-                resultado = resultado % eval(conta[i]);
-        }
-    }
-    else
-        resultado = eval(conta);
-    $('#valor2').html("");
-    vaiMudar = true;
-    if (fe) {
-        $('#valor').html(resultado.toExponential().toString().replace('.', ','));
-    }
-    else {
-        $('#valor').html(resultado.toString().replace('.', ','));
-    }
-    historico.push("<h3>" + resultado + "</h3>");
-    localStorage.setItem("historico", historico);
-    var historicoLocal = localStorage.getItem("historico");
-    while (historicoLocal.includes(','))
-        historicoLocal = historicoLocal.replace(',', '<br>');
-    $('#div-historico').html(historicoLocal);
 });
 
 $(document).on('click', '#historico', function () {

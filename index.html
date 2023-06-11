@@ -12,12 +12,16 @@
     <link rel="shortcut icon" href="contents/icons/calculadora.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="contents/css/style.css">
-    <script src="contents/js/main.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row cabecalio">
+    <div class="container-fluid"> 
+        <div class="row cabecalio">    
+            <div class="col-md-1" id="menu" style="width: 50px; height: 10px;"> 
+                <button id="btn-menu" class="btn">
+                    <img src="contents/icons/menu.png" alt="">
+                </button>
+            </div>       
             <div class="col-md-9">
                 <h3>Científica</h3>
             </div>
@@ -31,11 +35,19 @@
             </div>
         </div>
         <div class="row">
+            <div id="side-menu">
+                <button id="close-menu"><i class="fas fa-times">Fechar</i></button>
+                <ul>
+                    <li id="color-option">Mudar cor</li>
+                    <li id="converter-option">Conversor de unidade</li>
+                </ul>
+            </div>                       
+            
             <div class="col-md-9">
                 <div class="resultado2">
                     <p id="valor2"></p>
                 </div>
-                <div class="resultado">
+                <div class="resultado" id="idecra">
                     <h1 id="valor">0</h1>
                 </div>
                 <div class="row">
@@ -101,7 +113,7 @@
                     <div class="col" id="exp">
                         <span>Exp</span>
                     </div>
-                    <div class="col opp" id="mod">
+                    <div class="col opp" id="mod" onclick="pegar('mod')">
                         <span>Mod</span>
                     </div>
                 </div>
@@ -112,16 +124,16 @@
                     <div class="col" id="raiz">
                         <span>&radic;</span>
                     </div>
-                    <div class="col opp" id="abreparenteses">
+                    <div class="col opp" id="abreparenteses" onclick="pegar('(')">
                         <span>(</span>
                     </div>
-                    <div class="col opp" id="fechaparenteses">
+                    <div class="col opp" id="fechaparenteses" onclick="pegar(')')">
                         <span>)</span>
                     </div>
                     <div class="col" id="fatorial">
                         <span>n!</span>
                     </div>
-                    <div class="col opp" id="dividido">
+                    <div class="col opp" id="dividido" onclick="pegar('/')">
                         <span>/</span>
                     </div>
                 </div>
@@ -132,16 +144,16 @@
                     <div class="col opp" id="elevado">
                         <span>x<sup>y<sup></span>
                     </div>
-                    <div class="col numeros" id="7">
+                    <div class="col numeros" id="7" onclick="pegar('7')">
                         <span>7</span>
                     </div>
-                    <div class="col numeros" id="8">
+                    <div class="col numeros" id="8" onclick="pegar('8')">
                         <span>8</span>
                     </div>
-                    <div class="col numeros" id="9">
+                    <div class="col numeros" id="9" onclick="pegar('9')">
                         <span>9</span>
                     </div>
-                    <div class="col opp" id="multiplicar">
+                    <div class="col opp" id="multiplicar" onclick="pegar('x')">
                         <span>x</span>
                     </div>
                 </div>
@@ -152,16 +164,16 @@
                     <div class="col" id="dezax">
                         <span>10<sup>x<sup></span>
                     </div>
-                    <div class="col numeros" id="4">
+                    <div class="col numeros" id="4" onclick="pegar('4')">
                         <span>4</span>
                     </div>
-                    <div class="col numeros" id="5">
+                    <div class="col numeros" id="5" onclick="pegar('5')">
                         <span>5</span>
                     </div>
-                    <div class="col numeros" id="6">
+                    <div class="col numeros" id="6" onclick="pegar('6')">
                         <span>6</span>
                     </div>
-                    <div class="col opp" id="subtrair">
+                    <div class="col opp" id="subtrair" onclick="pegar('-')">
                         <span>-</span>
                     </div>
                 </div>
@@ -172,16 +184,16 @@
                     <div class="col" id="log">
                         <span>log</span>
                     </div>
-                    <div class="col numeros" id="1">
+                    <div class="col numeros" id="1"onclick="pegar('1')">
                         <span>1</span>
                     </div>
-                    <div class="col numeros" id="2">
+                    <div class="col numeros" id="2" onclick="pegar('2')">
                         <span>2</span>
                     </div>
-                    <div class="col numeros" id="3">
+                    <div class="col numeros" id="3"onclick="pegar('3')">
                         <span>3</span>
                     </div>
-                    <div class="col opp" id="somar">
+                    <div class="col opp" id="somar" onclick="pegar('+')">
                         <span>+</span>
                     </div>
                 </div>
@@ -195,13 +207,13 @@
                     <div class="col" id="maismenos">
                         <span>±</span>
                     </div>
-                    <div class="col numeros" id="0">
+                    <div class="col numeros" id="0" onclick="pegar('0')">
                         <span>0</span>
                     </div>
-                    <div class="col" id="virgula">
+                    <div class="col" id="virgula" onclick="pegar('.')"">
                         <span>,</span>
                     </div>
-                    <div class="col" id="igual">
+                    <div class="col" id="igual" onclick="calcular()">
                     </div>
                 </div>
             </div>
@@ -210,6 +222,8 @@
             </div>
         </div>
     </div>
+    <script src="contents/js/main.js"></script>
+    <script src="contents/js/menu.js"></script>
 </body>
 
 </html>
