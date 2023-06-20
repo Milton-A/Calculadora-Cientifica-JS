@@ -158,3 +158,63 @@ body {
 }
 */
 
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .col {
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.dark-mode .col:hover {
+    background-color: #454545;
+}
+
+.dark-mode .col:active {
+    background-color: #5a5a5a;
+}
+
+.dark-mode .funct-1,
+.dark-mode .funct-2 {
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.dark-mode .funct-1:hover,
+.dark-mode .funct-2:hover {
+    background-color: #454545;
+}
+
+.dark-mode .funct-1:active,
+.dark-mode .funct-2:active {
+    background-color: #5a5a5a;
+}
+
+.dark-mode .numeros {
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.dark-mode .resultado,
+.dark-mode .resultado2 {
+    color: #ffffff;
+}
+
+.dark-mode #side-menu {
+    background-color: #212121;
+}
+
+.dark-mode #side-menu ul li:hover {
+    background-color: #363636;
+}
+
+.dark-mode #backspace {
+    background-image: url('../icons/backspace1-light.png');
+}
+
+.dark-mode #igual {
+    background-image: url('../icons/igual-light.png');
+}

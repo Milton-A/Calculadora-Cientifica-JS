@@ -1,4 +1,4 @@
-$(document).ready(function() {
+at$(document).ready(function() {
 
     // Seleciona o botão de fechar
   var closeBtn = $('#close-menu');
@@ -23,6 +23,11 @@ $(document).ready(function() {
     btnMenu.on('click', function() {
       // Exibe ou oculta o menu lateral ao clicar no botão
       sideMenu.toggleClass('show');
+
+      colorOption.on('click', function() {
+        toggleDarkMode();
+    });
+    
     });
     
     // Adiciona um evento de clique à opção de mudar cor

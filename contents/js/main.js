@@ -386,3 +386,12 @@ $(document).on('click', '#historico', function () {
     $('#his').css('borderBottom', '3px solid red');
     $('#mem').css('borderBottom', 'none');
 });
+
+function toggleDarkMode() {
+    var body = document.body;
+    body.classList.toggle('dark-mode');
+}
+
+$(document).on('click', '#btn-toggle-dark-mode', function() {
+    toggleDarkMode();
+});
